@@ -138,7 +138,7 @@ async function main() {
     playMusic(songs[0], true)
 
     //display album playlist
-    displayAlbums()
+    await displayAlbums()
 
 
    
