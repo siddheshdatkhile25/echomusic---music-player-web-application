@@ -113,7 +113,6 @@ async function displayAlbums(){
                         <h2>${response.title}</h2>
                         <p>${response.description}</p>
                     </div>`
-
         }
         
     }
@@ -123,7 +122,6 @@ async function displayAlbums(){
         e.addEventListener("click", async item=>{
             songs =  await getSongs(`songs/${item.currentTarget.dataset.folder}`);
             playMusic(songs[0]);
-
         })
     })
 }
@@ -133,18 +131,12 @@ async function displayAlbums(){
 async function main() {
 
     //get the list of songs
-
     await getSongs("songs/hindi");
     playMusic(songs[0], true)
 
     //display album playlist
     await displayAlbums()
 
-
-   
-
-
-    
     // add event listener to play
     let play = document.getElementById("play");
     let pervious = document.getElementById("previous");
