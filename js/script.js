@@ -28,7 +28,6 @@ async function getSongs(folder) {
     div.innerHTML = response;
     let as = div.getElementsByTagName("a")
     songs = [];
-    images = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
@@ -43,8 +42,7 @@ async function getSongs(folder) {
     // show all the songs in playlist
 
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0];
-    songUL.innerHTML = " ";
-
+    songUL.innerHTML = ""
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li>
                             <img src="img/music.svg" alt="">
@@ -65,7 +63,7 @@ async function getSongs(folder) {
         })
     })
 
-    return songs;
+    return songs
 }
 
 //function for playing the song
